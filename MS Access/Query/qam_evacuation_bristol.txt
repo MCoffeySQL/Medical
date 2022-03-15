@@ -1,0 +1,6 @@
+SELECT 
+  id, 
+  depiction, 
+  conclusion
+FROM tds_evacuation_bristol
+WHERE isActive = 'Yes';

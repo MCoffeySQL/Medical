@@ -1,0 +1,37 @@
+
+
+SELECT
+  DCOUNT("id","tdu_dialysis_hpc","id <= " & " & hpc.id & " AND isActive = 'Yes') AS hpcRow,
+  hpc.id AS hpcID,
+  hpc.idPatient,
+  hpc.isActive, 
+  dates.dDay,
+  dates.aDayName,
+  hpc.bagMain,
+  hpc.bagMainExpires,
+  hpc.bagMainLot,
+  hpc.bagSecondary,
+  hpc.bagSecondaryExpires,
+  hpc.bagSecondaryLot,
+  hpc.timeStart,
+  hpc.timeEnd,
+  hpc.transferSet,
+  hpc.iDrain,
+  hpc.totalUF,
+  hpc.avgDwell,
+  hpc.addDwell,
+  hpc.systemError,
+  hpc.shortDescription,
+  hpc.dateCreated,
+  hpc.dateModified,
+  hpc.createdBy,
+  hpc.modiiedBy,
+  FORMAT(DATEADD('s',DATEDIFF('s',hpc.timeStart,hpc.timeEnd),DATEVALUE(NOW())),'hh:nn:ss') AS timeSession,
+FROM tdu_dialysis_hpc AS hpc
+INNER JOIN tds_dates AS dates
+  ON DAY(hpc.timeEnd) = dates.aDay
+  AND MONTH(hpc.timeEnd) = dates.aMonth
+  AND YEAR(hpc.timeEnd) = dates.aYear
+WHERE hpc.isActive = 'Yes'
+ORDER BY hpc.timeStart DESC;
+  

@@ -1,0 +1,20 @@
+--QUERY qal_dialysis_hpm
+--Attached to form fdu_dialysis_hpm as main return list for items available
+
+SELECT TOP 60 
+  hpm.id, 
+  dates.[dDay] AS dDay, 
+  FORMAT(hpm.timeDrainStart,"mm/dd/yyyy") AS [Date], 
+  FORMAT(hpm.timeDrainStart,"HH:nn:ss") AS [Time], 
+  hpm.bag, 
+  hpm.Line
+FROM tds_dates AS dates
+INNER JOIN tdu_dialysis_hpm AS hpm 
+  ON (DAY(hpm.timeDrainStart) = dates.aDay) 
+  AND (MONTH(hpm.timeDrainStart) = dates.aMonth) 
+  AND (YEAR(hpm.timeDrainStart) = dates.aYear)
+WHERE dates.isActive = 'Yes'    
+  AND hpm.isActive = 'Yes'    
+  AND hpm.timeDrainStart >= DATEADD('d',-60,NOW())
+ORDER BY hpm.timeDrainStart DESC;
+

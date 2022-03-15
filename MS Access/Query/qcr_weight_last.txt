@@ -1,0 +1,4 @@
+SELECT TOP 1 weight AS lastWeight
+FROM tdu_weight
+WHERE isActive = 'Yes'
+ORDER BY dateWeight DESC;

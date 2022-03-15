@@ -1,0 +1,15 @@
+SELECT TOP 60   
+  symptom.id AS ID, 
+  symptom.isActive AS isActive, 
+  Status, 
+  FORMAT(symptom.dateSymptom,"mm/dd/yyyy") AS [Date], 
+  FORMAT(symptom.timeStart,"hh:nn:ss") AS Start, 
+  FORMAT(symptom.timeEnd,"hh:nn:ss") AS [End], 
+  mSymptom.symptom
+FROM tdu_symptom AS symptom 
+INNER JOIN tds_symptoms AS mSymptom 
+  ON symptom.idSymptom = mSymptom.id
+WHERE symptom.isActive = 'Yes'    
+  AND mSymptom.isActive = 'Yes'
+  AND symptom.dateSymptom >= dateadd("d",-60,Now())
+ORDER BY symptom.dateSymptom DESC;

@@ -1,0 +1,6 @@
+SELECT 
+  id, 
+  nameMedication & ' (' & nameGeneric & ')' AS Medication
+FROM tds_medication
+WHERE isActive IN('Test','Yes')
+ORDER BY [nameMedication];

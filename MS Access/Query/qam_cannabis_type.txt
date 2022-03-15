@@ -1,0 +1,22 @@
+SELECT 'Vape' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Flower' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Edible' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Tincture' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Topical' AS item
+FROM tds_oneRow;

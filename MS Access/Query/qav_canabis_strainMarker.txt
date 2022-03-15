@@ -1,0 +1,12 @@
+SELECT 
+  strainMarker.id, 
+  strainMarker.idCannabis, 
+  strainMarker.idMarker, 
+  cannabis.strain, 
+  marker.marker, 
+  strainMarker.volMarker
+FROM (tds_cannabis_strainMarker AS strainMarker 
+INNER JOIN tds_cannabis_marker AS marker 
+  ON strainMarker.idMarker = marker.id) 
+INNER JOIN tdu_cannabis AS cannabis 
+  ON strainMarker.idCannabis = cannabis.id;

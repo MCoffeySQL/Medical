@@ -1,0 +1,8 @@
+SELECT ROUND(AVG(weight), 2) AS avgWeight
+FROM (
+	SELECT TOP 10 weight
+	FROM tdu_weight
+	WHERE isActive = 'Yes'
+		AND DATEDIFF('d', dateWeight, NOW()) <= 30
+	ORDER BY dateWeight DESC
+	) AS gatherValues;

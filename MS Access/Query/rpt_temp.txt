@@ -1,0 +1,7 @@
+SELECT FORMAT(dateTemp, 'mm/dd/yyyy') AS [Date],
+	FORMAT(dateTemp, 'hh:nn:ss') AS [Time],
+	TEMP & tempUnit AS TEMP
+FROM qav_temp
+WHERE isActive = 'Yes'
+	AND CDATE(dateTemp) >= CDATE('12/1/2021')
+	AND CDATE(dateTemp) <= CDATE('1/13/2022');

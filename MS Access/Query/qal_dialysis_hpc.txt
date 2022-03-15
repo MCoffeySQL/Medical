@@ -1,0 +1,20 @@
+--QUERY qal_dialysis_hpc
+--Attached to form fdu_dialysis_hpc as main return list for items available
+
+SELECT TOP 60 
+  hpc.ID, 
+  dates.[dDay] AS dDay, 
+  hpc.status AS [Status],
+  FORMAT(hpc.timeStart,"mm/dd/yyyy") AS [Date], 
+  FORMAT(hpc.timeStart,"HH:nn:ss") AS [Time], 
+  hpc.bagMain AS [Bag Main], 
+  hpc.bagSecondary AS [Bag Secondary]
+FROM tds_dates AS dates 
+INNER JOIN tdu_dialysis_hpc AS hpc 
+  ON (YEAR(hpc.timeStart) = dates.aYear) 
+  AND (MONTH(hpc.timeStart) = dates.aMonth) 
+  AND (DAY(hpc.timeStart) = dates.aDay)
+WHERE dates.isActive = 'Yes'    
+  AND hpc.isActive = 'Yes'    
+  AND hpc.timeStart >= DATEADD('d',-60,NOW())
+ORDER BY hpc.timeStart DESC;

@@ -1,0 +1,12 @@
+SELECT 'Standing' AS itemValue
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Sitting' AS itemValue
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Laying' AS itemValue
+FROM tds_oneRow;

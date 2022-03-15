@@ -1,0 +1,4 @@
+SELECT DISTINCT 
+  nameGeneric
+FROM tds_medication
+ORDER BY nameGeneric;

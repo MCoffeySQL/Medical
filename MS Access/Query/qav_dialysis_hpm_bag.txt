@@ -1,0 +1,8 @@
+TRANSFORM Max(qav_dialysis_hpm.bag) AS MaxOfbag
+SELECT 
+  DATEVALUE(qav_dialysis_hpm.timeDrainStart) AS drainStart, 
+  qav_dialysis_hpm.dDay
+FROM qav_dialysis_hpm
+GROUP BY DATEVALUE(qav_dialysis_hpm.timeDrainStart), qav_dialysis_hpm.dDay
+ORDER BY qav_dialysis_hpm.dDay DESC 
+PIVOT ([session]);

@@ -1,0 +1,5 @@
+SELECT TOP 1 temp AS lastTemp
+FROM tdu_temp
+WHERE isActive = 'Yes'
+  AND idPatient = 'pat35700'
+ORDER BY dateTemp DESC;

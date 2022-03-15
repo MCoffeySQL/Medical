@@ -1,0 +1,28 @@
+SELECT 1 AS id,
+	'Indica' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 2 AS id,
+	'Sativa' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 3 AS id,
+	'Full Spectrum' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 4 AS id,
+	'Hybrid' AS item
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 5 AS id,
+	'Other' AS item
+FROM tds_oneRow
+ORDER BY id;

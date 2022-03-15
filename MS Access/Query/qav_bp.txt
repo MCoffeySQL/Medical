@@ -1,0 +1,29 @@
+SELECT 
+  bp.id AS idBP, 
+  DCOUNT("id","tdu_bp","id <= " & bp.id & " AND isActive = 'Yes'") AS rowBP, 
+  bp.idPatient, 
+  dates.dDay, 
+  FORMAT(bp.dateBP,'mm/dd/yyyy hh:nn:ss') AS dateBP, 
+  WEEKDAYNAME(WEEKDAY(bp.dateBP,0) ,FALSE,0) AS dateDayName, 
+  bp.[position], 
+  bp.systolic, 
+  bp.diastolic, 
+  bp.pulse, 
+  bp.systolic & '/' & bp.diastolic AS BP, 
+  SWITCH(
+    LEN(systolic & '')=0,'Invalid',
+    LEN(diastolic & '')=0,'Invalid',
+    systolic < 100 AND diastolic < 80, 'Low',
+    systolic < 120 AND diastolic < 80,'Normal',
+    systolic >= 120 AND systolic <= 129 AND diastolic < 80,'Elevated',
+    (systolic >= 130 AND systolic <=139) OR (diastolic >= 80 AND diastolic <= 89), 'High Stage 1',
+    systolic >= 140 OR (diastolic > 90 AND diastolic < 120), 'High Stage 2',
+    systolic >= 180 OR diastolic >=120, 'Crisis',
+    1 = 1, 'Default') AS resultBP
+FROM tdu_bp AS bp 
+INNER JOIN tds_dates AS dates 
+  ON (DAY(bp.dateBP) = dates.aDay) 
+  AND (MONTH(bp.dateBP) = dates.aMonth) 
+  AND (YEAR(bp.dateBP) = dates.aYear)
+WHERE bp.isActive = 'Yes'
+  AND dates.isActive = 'Yes';

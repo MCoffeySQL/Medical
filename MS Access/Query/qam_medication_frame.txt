@@ -1,0 +1,5 @@
+SELECT 
+  tds_medication_frame.frame, 
+  shortDescription
+FROM tds_medication_frame
+WHERE (((tds_medication_frame.[isActive])='Yes'));

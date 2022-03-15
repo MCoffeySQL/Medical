@@ -1,0 +1,8 @@
+SELECT ROUND(AVG(TEMP), 2) AS avgTemp
+FROM (
+	SELECT TOP 10 TEMP
+	FROM tdu_temp
+	WHERE isActive = 'Yes'
+		AND DATEDIFF('d', dateTemp, NOW()) <= 30
+	ORDER BY dateTemp DESC
+	) AS gatherValues;

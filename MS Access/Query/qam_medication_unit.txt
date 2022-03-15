@@ -1,0 +1,8 @@
+SELECT 
+ unitLabel, 
+ unitName
+FROM tds_unitsMeasure
+WHERE isActive = 'Yes'
+  AND unitCategory IN ('Volume','Weight')
+  AND unitType IN ('Liquid','Solid')
+ORDER BY listOrder, unitName;

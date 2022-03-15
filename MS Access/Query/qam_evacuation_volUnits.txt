@@ -1,0 +1,11 @@
+SELECT id, unitLabel, unitName
+FROM tds_unitsMeasure
+WHERE isActive = 'Yes'
+  AND unitName IN(
+    'pounds',
+    'stone',
+    'grams',
+    'cup',
+    'teaspoon',
+    'tablespoon'
+  );

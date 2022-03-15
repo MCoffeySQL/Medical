@@ -1,0 +1,5 @@
+SELECT TOP 1 bp & ' ' & pulse AS lastBP,
+	resultBP
+FROM qav_bp
+WHERE [position] = 'Sitting'
+ORDER BY dateBP DESC;

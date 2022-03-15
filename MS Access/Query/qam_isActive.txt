@@ -1,0 +1,12 @@
+SELECT 'Yes' AS isActive
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'No' AS isActive
+FROM tds_oneRow
+
+UNION ALL
+
+SELECT 'Test' AS isActive
+FROM tds_oneRow;
