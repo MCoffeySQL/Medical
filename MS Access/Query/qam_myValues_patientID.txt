@@ -1,3 +1,0 @@
-SELECT 
- 'pat35700' AS idPatient
-FROM tds_oneRow;

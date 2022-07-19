@@ -1,6 +1,0 @@
-SELECT
-  id AS idSymptom, 
-  symptom
-FROM tds_symptoms
-WHERE isActive = 'Yes'
-ORDER BY symptom;

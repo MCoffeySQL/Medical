@@ -1,6 +1,0 @@
-SELECT 
-  id, 
-  medicationType
-FROM tds_medication_type
-WHERE isActive ='Yes'
-ORDER BY medicationType;

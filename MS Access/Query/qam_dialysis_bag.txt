@@ -1,5 +1,0 @@
-SELECT unitName
-FROM tds_unitsMeasure
-WHERE isActive IN ('Yes','Test')
-  AND unitCategory = 'dialysis'
-  AND unitType = 'Bag HPM';

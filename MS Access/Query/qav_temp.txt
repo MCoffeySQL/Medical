@@ -1,7 +1,0 @@
-SELECT 
- isActive, 
- dateTemp, 
- temp, 
- tempUnit
-FROM tdu_temp
-WHERE isActive = 'Yes';

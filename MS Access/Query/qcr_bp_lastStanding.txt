@@ -1,6 +1,0 @@
-SELECT TOP 1 
-  systolic & '/' & diastolic & ' ' & pulse AS lastBP
-FROM tdu_bp
-WHERE isActive = 'Yes'
-	AND [position] = 'standing'
-ORDER BY dateBP DESC;

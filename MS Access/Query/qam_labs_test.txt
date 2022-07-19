@@ -1,5 +1,0 @@
-SELECT 
-  id, 
-  testName
-FROM tds_labs_test
-WHERE isActive IN ('Test','Yes');

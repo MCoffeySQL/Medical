@@ -1,4 +1,0 @@
-SELECT COUNT(*) AS cItems
-FROM tdu_symptom
-WHERE isActive = 'Yes'
-  AND [status] = 'Open';

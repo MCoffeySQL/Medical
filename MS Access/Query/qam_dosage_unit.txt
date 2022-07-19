@@ -1,7 +1,0 @@
-SELECT TOP 1 'Hour(s)' AS dosageUnit
-FROM tds_oneRow
-
-UNION ALL
-
-SELECT TOP 1 'Day' AS dosageUnit
-FROM tds_oneRow;

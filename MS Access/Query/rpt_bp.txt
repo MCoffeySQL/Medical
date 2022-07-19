@@ -1,9 +1,0 @@
-SELECT FORMAT(dateBP, 'mm/dd/yyyy') AS [Date],
-	FORMAT(dateBP, 'hh:nn:ss') AS [Time],
-	[Position],
-	systolic & "/" & diastolic AS BP,
-	pulse
-FROM qav_bp
-WHERE CDATE(dateBP) >= CDATE('12/1/2021')
-	AND CDATE(dateBP) <= CDATE('1/13/2022')
-ORDER BY CDATE(dateBP);

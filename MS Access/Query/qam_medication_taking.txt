@@ -1,5 +1,0 @@
-SELECT 
-  id,
-  nameMedication
-FROM tds_medication
-WHERE isActive = 'Yes';

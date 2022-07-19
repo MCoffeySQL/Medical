@@ -1,5 +1,0 @@
-SELECT 
-  id, 
-  [sourceName]
-FROM tds_labs_source
-WHERE isActive IN ('Test','Yes');

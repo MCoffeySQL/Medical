@@ -1,9 +1,0 @@
-SELECT 'Yes' AS [itemValue]
-FROM tds_oneRow
-WHERE id = 1
-
-UNION
-
-SELECT 'No' AS [itemValue]
-FROM tds_oneRow
-WHERE id = 1;

@@ -1,6 +1,0 @@
-SELECT 
-  unitLabel, 
-  unitName
-FROM tds_unitsMeasure
-WHERE isActive IN('Yes','Test')
-  AND unitCategory = 'Temperature';

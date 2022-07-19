@@ -1,4 +1,0 @@
-SELECT TOP 1 [session] AS lastSession,
-	bag AS lastBag,
-	FORMAT(DATEADD('s', DATEDIFF('s', timeFillEnd, NOW()), CDATE('1/1/2000')), 'hh:nn:ss') AS lastDwell
-FROM qav_dialysis_hpm;
