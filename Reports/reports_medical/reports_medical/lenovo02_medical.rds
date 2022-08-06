@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="lenovo02_medical">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=DCJS-Lenovo02;Initial Catalog=Medical</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>09100148-5840-4dba-846d-8faef7bde094</DataSourceID>
+</RptDataSource>

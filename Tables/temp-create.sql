@@ -1,0 +1,25 @@
+--TABLEL[dbo].[temp]
+USE medical;
+GO
+
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+GO
+
+DROP TABLE IF EXISTS dbo.[temp];
+GO
+
+CREATE TABLE dbo.[temp](
+  ID INT IDENTITY(1,1)NOT NULL,
+  idPatient NVARCHAR(24) NOT NULL,
+  isActive TINYINT NOT NULL,
+  dateTemp DATETIME NOT NULL,
+  [temp] NUMERIC(8,2) NOT NULL,
+  tempUnit NVARCHAR(2) NOT NULL,
+  shortDescription NVARCHAR(255) NULL,
+  dateCreated DATETIME NOT NULL,
+  dateModified DATETIME NOT NULL,
+  createdBy NVARCHAR(24) NOT NULL,
+  modifiedBy NVARCHAR(24) NOT NULL
+);
+GO
